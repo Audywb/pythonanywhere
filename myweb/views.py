@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout as user_logout
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required(login_url='login')
 def index(req):
@@ -18,8 +19,17 @@ def index(req):
 def united(req):
 	return render(req, 'myweb/united.html')
 
+def shopping1(req):
+    return render(req, 'myweb/shopping1.html')
 
-@login_required(login_url='login')
+def shopping2(req):
+    return render(req, 'myweb/shopping2.html')
+
+def shopping3(req):
+    return render(req, 'myweb/shopping3.html')
+
+
+
 def loginPage(request):
     
         if request.method == 'POST':
@@ -33,7 +43,7 @@ def loginPage(request):
                 return redirect('index')
 
             else:
-                messages.info(request, 'ชื่อผู้ใช้หรือรหัสผ่านผไม่ถูกต้อง')
+                messages.info(request,'  ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')
 
 
 

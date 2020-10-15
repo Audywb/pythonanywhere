@@ -23,9 +23,11 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" href="{% static 'admin/css/login_2.css' %}">
+    <link rel="icon" href="https://sv1.picz.in.th/images/2020/10/08/OLzNVb.png" type="image/gif" sizes="16x16">
 </head>
 
 <body>
+
     <div class="wrapper animated bounce">
         <h1>Shoppa Phone</h1>
         <hr>
@@ -40,7 +42,8 @@
             <div class="crtacc"><a href="{% url 'register' %}">Create Account</a></div>
 
             {% for message in messages %}
-            <p id="messages">{{message}}</p>
+            <hr>
+            <p style="color:red; text-align: center;" id=" messages ">{{message}}</p>
             {% endfor %}
         </form>
 

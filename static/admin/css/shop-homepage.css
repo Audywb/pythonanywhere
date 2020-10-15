@@ -1,0 +1,63 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/templates/shop-homepage)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 56px;
+    background-color: #ffffff;
+    margin: 25px;
+}
+
+.container {
+    color: #ff5c5c;
+    position: relative;
+    width: 50%;
+}
+
+.navbar-custom {
+    background-color: #ff5c5c;
+}
+
+
+/* change the brand and text color */
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255, 255, 255, .8);
+}
+
+
+/* change the link color */
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #ff5c5c;
+}
+
+
+/* change the color of active or hovered links */
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+
+/* Clearfix (clear floats) */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}

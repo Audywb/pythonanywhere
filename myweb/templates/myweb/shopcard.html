@@ -1,0 +1,135 @@
+ {% load static %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="{% static 'admin/css/shopcard.css'%}">
+<!------ Include the above in your HEAD tag ---------->
+
+<header>
+    <ul>
+        <i class='fa fa-shopping-cart'>
+      <span class='counter'></span>
+    </i>
+    </ul>
+</header>
+<div class='row'>
+    <div class='product--blue'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Women)</p>
+            <p>Size 7</p>
+            <p>Price £199.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+    <div class='product--orange'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Men)</p>
+            <p>Size 10</p>
+            <p>Price £99.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+    <div class='product--red'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Women)</p>
+            <p>Size 8</p>
+            <p>Price £399.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+    <div class='product--green'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Men)</p>
+            <p>Size 11</p>
+            <p>Price £299.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+    <div class='product--yellow'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Women)</p>
+            <p>Size 11</p>
+            <p>Price £299.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+    <div class='product--pink'>
+        <div class='product_inner'>
+            <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png' width='300'>
+            <p>Nike Air (Men)</p>
+            <p>Size 11</p>
+            <p>Price £299.99</p>
+            <button>Add to basket</button>
+        </div>
+        <div class='product_overlay'>
+            <h2>Added to basket</h2>
+            <i class='fa fa-check'></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+
+        "use strict"
+
+        var init = "No items yet!";
+        var counter = 0;
+
+        // Initial Cart
+        $(".counter").html(init);
+
+        // Add Items To Basket
+        function addToBasket() {
+            counter++;
+            $(".counter").html(counter).animate({
+                'opacity': '0'
+            }, 300, function() {
+                $(".counter").delay(300).animate({
+                    'opacity': '1'
+                })
+            })
+        }
+
+        // Add To Basket Animation
+        $("button").on("click", function() {
+            addToBasket();
+            $(this).parent().parent().find(".product_overlay").css({
+                'transform': ' translateY(0px)',
+                'opacity': '1',
+                'transition': 'all ease-in-out .45s'
+            }).delay(1500).queue(function() {
+                $(this).css({
+                    'transform': 'translateY(-500px)',
+                    'opacity': '0',
+                    'transition': 'all ease-in-out .45s'
+                }).dequeue();
+            });
+        });
+    });
+</script>
