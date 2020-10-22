@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def index(req):
 	return render(req, 'myweb/index.html')
 
@@ -31,7 +31,7 @@ def shopping3(req):
 
 
 def loginPage(request):
-    
+
         if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
