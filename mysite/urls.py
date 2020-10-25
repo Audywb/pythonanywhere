@@ -20,5 +20,6 @@ urlpatterns = [
     path('Sell_view/', views.Sell_view),
     path('add_model/', views.add_model),
     path('add_model2/', views.add_model2),
+    path('show/', views.show),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

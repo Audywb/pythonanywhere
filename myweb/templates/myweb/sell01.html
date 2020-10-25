@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Smartphone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+
+    <link href="{% static 'admin/css/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'admin/css/shop-homepage.css'%}">
+    <link rel="icon" href="https://sv1.picz.in.th/images/2020/10/08/OLzNVb.png" type="image/gif" sizes="16x16">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .zoom {
+            padding: 50px;
+            background: url("https://sv1.picz.in.th/images/2020/10/12/OIYZee.jpg");
+            background-size: cover;
+            transition: transform .2s;
+            margin-top: 5%;
+            margin-left: 35%;
+            width: 480px;
+            height: 300px;
+        }
+        
+        .zoom:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+        
+        .ptext {
+            margin-top: 0%;
+            margin-left: 3%;
+            padding: 10%;
+            text-align: center;
+        }
+        
+        .img01 {
+            background-size: cover;
+            margin-top: -7%;
+            margin-left: 20%;
+        }
+        
+        .buttonshop {
+            margin-left: 33%;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar navbar-expand-lg fixed-top navbar-custom ">
+        <div class="container">
+            <a href="/index" class="navbar-brand">Shoppa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                {% if user.is_authenticated %}
+
+
+                <span class="nav navbar-nav navbar-right ml-auto">{{request.user}} </span>
+
+                <form class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                    <button type="submit" class="btn btn-outline-light">Search</button>
+                </form>
+                <div>
+                    <ul class="nav navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+                        </li>
+                    </ul>
+                </div>
+
+                {% else %}
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"><i class="fa fa-fw fa-user"></i>Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="fa fa-fw fa-user"></i>Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    <div class="zoom"></div>
+    <div class="ptext">
+        <p>Samsung เปิดตัวสมาร์ทโฟนรุ่นใหม่ Galaxy F41 ที่มาพร้อมจุดแข็งอย่างแบตเตอรี่ขนาด 6000mAh สามารถเล่นวีดีโอ หรือคุยสายได้นานต่อเนื่องถึง 26 ชั่วโมง <br>
+            <br> สมาร์ทโฟนรุ่นนี้ถูกออกแบบและผลิตที่อินเดียเจาะเป้าหมายไปที่กลุ่มคนรุ่นใหม่ โดยที่ F41 มากับจอ Super AMOLED ขนาด 6.4 นิ้ว ความละเอียด 1080p+ ครอบคลุมการแสดงผลสีมาตรฐาน NTSC 110% ให้ความสว่างสูงสุด 420nits ส่วนภายในใช้ชิป Exynos 9611 รัน
+            Android 10 คลุมด้วย OneUI Core 2.1</p>
+    </div>
+    <div class="img01">
+        <img src="https://sv1.picz.in.th/images/2020/10/22/bfDc4a.jpg">
+    </div>
+    <br>
+    <div>
+        <p style="text-align: center;">สเปค RAM มีให้ 6GB และความจำเครื่อง 64/128GB รองรับหน่วยความจำเสริมและการทำงานสองซิมโดยใช้ถาด Triple slot</p>
+    </div>
+
+    <iframe style="margin-left: 18%;" width="956" height="538" src="https://www.youtube.com/embed/gLzXHuV-8hg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    <br>
+    <br>
+    <img style="margin-left: 22%; width: 60%;" src="https://sv1.picz.in.th/images/2020/10/22/bfAtgk.jpg" alt="bfAtgk.jpg" border="0" />
+    <br>
+    <br>
+    <br>
+    <div class="buttonshop">
+        <a href="/add_model2" class="btn btn-info btn-lg btn-block">
+            <span class="glyphicon glyphicon-shopping-cart"><img width="7%" src="https://sv1.picz.in.th/images/2020/10/22/bf6jwz.png"></span> Buy Now
+        </a>
+    </div>
+    <br>
+    <div>
+
+    </div>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">audyyy.pythonanywhere.com Website 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+
+
+
+    <!-- Navbar
+      ================================================== -->
+    <!--Section: Block Content-->
+
+
+
+    <script src="{% static 'admin/css/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'admin/css/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Smartphone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+
+    <link href="{% static 'admin/css/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+    <link rel="icon" href="https://sv1.picz.in.th/images/2020/10/08/OLzNVb.png" type="image/gif" sizes="16x16">
+
+
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+        }
+        
+        .fromsell {
+            display: inline-block;
+        }
+        
+        .submit {
+            margin-left: -20%;
+            margin-top: 15%;
+        }
+        
+        .wrapper {
+            margin-left: 35%;
+            width: 480px;
+            height: 1px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        
+        .wrapper h1 {
+            font-family: 'Galada', cursive;
+            color: #1a1a1a;
+            text-shadow: 2px 2px 4px #4dcdff;
+            letter-spacing: 8px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        
+        .wrapper hr {
+            opacity: 0.2;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-custom ">
+        <div class="container">
+            <a href="/index" class="navbar-brand">Shoppa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                {% if user.is_authenticated %}
+
+
+                <span class="nav navbar-nav navbar-right ml-auto">{{request.user}} </span>
+
+                <form class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                    <button type="submit" class="btn btn-outline-light">Search</button>
+                </form>
+                <div>
+                    <ul class="nav navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+                        </li>
+                    </ul>
+                </div>
+
+                {% else %}
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"><i class="fa fa-fw fa-user"></i>Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="fa fa-fw fa-user"></i>Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar
+      ================================================== -->
+    <div class="wrapper animated bounce">
+        <h1>Shoppa Phone</h1>
+        <hr>
+    </div>
+    <br><br><br><br>
+    <div class="fromsell">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlInput1">ชื่อ-นามสกุล</label> <br> {{form.User_Name}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">เบอร์โทรศัพท์</label> <br>{{form.Phone}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">อีเมล</label> <br>{{form.E_mail}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">ที่อยู่</label> <br>{{form.A_ddess}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">รหัสไปรษณีย์</label> <br>{{form.P_code}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">เลขที่ทำรายการ"ใบเสร็จ 4 ตัวท้าย</label> <br>{{form.N_slip}}
+            </div>
+
+            <div class="submit">
+                <button type="submit" class="btn btn-default " &gt;Submit</button>
+                <br>
+                <button type="submit" class="btn btn-primary">ยืนยันการสั่งซื้อ</button>
+            </div>
+
+        </form>
+    </div>
+    <br><br><br><br><br>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">audyyy.pythonanywhere.com Website 2020 (Website: เพื่อการศึกษาเท่านั้น)</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+</body>
+<!-- Bootstrap core JavaScript -->
+
+<script src="{% static 'admin/css/vendor/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'admin/css/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

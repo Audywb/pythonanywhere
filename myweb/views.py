@@ -3,12 +3,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 
+from .forms import Sell
 
 from .models import *
 from .forms import  CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout as user_logout
 from django.contrib.auth.decorators import login_required
+from .forms import MyCommentForm
+from .forms import MyCommentForm2
 
 
 # Create your views here.
@@ -27,6 +30,13 @@ def shopping2(req):
 
 def shopping3(req):
     return render(req, 'myweb/shopping3.html')
+
+def sell01(req):
+    return render(req, 'myweb/sell01.html')
+
+def showdata(req):
+    return render(req, 'myweb/showdata.html')
+
 
 
 
@@ -75,7 +85,56 @@ def registerPage(request):
         context = {'form':form}
         return render(request, 'myweb/register.html', context)
 
+def Sell_view(request):
+     
+    if request.method == "POST":
+        form = Sell(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            
+            model_instance.save()
+            return redirect('/')
+ 
+    else:
+ 
+        form = Sell()
+ 
+        return render(request, 'myweb/my_template.html', {'form': form})
 
+
+def add_model(request):
+     
+    if request.method == "POST":
+        form = MyCommentForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.save()
+            return redirect('/')
+ 
+    else:
+ 
+        form = MyCommentForm()
+ 
+        return render(request, "myweb/my_template.html", {'form': form})
+
+def add_model2(request):
+     
+    if request.method == "POST":
+        form = MyCommentForm2(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.save()
+            return redirect('/')
+ 
+    else:
+ 
+        form = MyCommentForm2()
+ 
+        return render(request, "myweb/my_template.html", {'form': form})
+        
+def show(testrequestreq):
+    show = Comment2.objects.all
+    return render(testrequestreq ,'myweb/showdata.html' ,{'show':show})
 
 def detail(request, question_id):
     return render(request, 'myweb/detail.html')
