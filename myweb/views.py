@@ -3,14 +3,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 
-from .forms import Sell
 
 from .models import *
 from .forms import  CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout as user_logout
 from django.contrib.auth.decorators import login_required
-from .forms import MyCommentForm
 from .forms import MyCommentForm2
 
 
@@ -85,38 +83,6 @@ def registerPage(request):
         context = {'form':form}
         return render(request, 'myweb/register.html', context)
 
-def Sell_view(request):
-     
-    if request.method == "POST":
-        form = Sell(request.POST)
-        if form.is_valid():
-            model_instance = form.save(commit=False)
-            
-            model_instance.save()
-            return redirect('/')
- 
-    else:
- 
-        form = Sell()
- 
-        return render(request, 'myweb/my_template.html', {'form': form})
-
-
-def add_model(request):
-     
-    if request.method == "POST":
-        form = MyCommentForm(request.POST)
-        if form.is_valid():
-            model_instance = form.save(commit=False)
-            model_instance.save()
-            return redirect('/')
- 
-    else:
- 
-        form = MyCommentForm()
- 
-        return render(request, "myweb/my_template.html", {'form': form})
-
 def add_model2(request):
      
     if request.method == "POST":
@@ -124,7 +90,7 @@ def add_model2(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
-            return redirect('/')
+            return redirect('index')
  
     else:
  
@@ -133,7 +99,7 @@ def add_model2(request):
         return render(request, "myweb/my_template.html", {'form': form})
         
 def show(testrequestreq):
-    show = Comment2.objects.all
+    show = Comment2.objects.all()
     return render(testrequestreq ,'myweb/showdata.html' ,{'show':show})
 
 def detail(request, question_id):

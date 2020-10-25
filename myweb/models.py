@@ -15,28 +15,6 @@ class Choice(models.Model):
     def __str__(self):
         return f'{self.question.question_text} - {self.choice_text} - {self.votes}'
 
-class Sell(models.Model):
-    name = models.CharField(max_length=100)
-    p_number = models.CharField(max_length=10)
-    e_mail = models.CharField(max_length=50)
-    address = models.TextField()
-    postcode = models.CharField(max_length=10)
-    number_slip = models.IntegerField()
-<<<<<<< HEAD
-    
-
-    def __str__(self):
-        return f'{self.name} - {self.p_number} - {self.address}- {self.p_number} - {self.postcode}- {self. number_slip}'
-
-class Comment(models.Model):
-     
-    Name = models.CharField(max_length=100)
-    Phone_Number = models.CharField(max_length=10)
-    Email = models.CharField(max_length=100)
- 
-    def __str__(self):   # __unicode__ on Python 2
-        return self.Name
-
 class Comment2(models.Model):
      
     id = models.AutoField(primary_key=True)
@@ -50,9 +28,3 @@ class Comment2(models.Model):
  
     def __str__(self):   # __unicode__ on Python 2
         return self.User_Name
-=======
-    sell_date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'{self.name} - {self.p_number} - {self.address}- {self.p_number} - {self.postcode}- {self.sell_date} - {self. number_slip}'
->>>>>>> eef8e615a30ffdf2c1cbb57a112645b3b53aaa36
