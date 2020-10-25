@@ -15,7 +15,7 @@ from .forms import MyCommentForm2
 
 
 # Create your views here.
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def index(req):
 	return render(req, 'myweb/index.html')
 
@@ -41,7 +41,7 @@ def showdata(req):
 
 
 def loginPage(request):
-    
+
         if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')

@@ -13,7 +13,11 @@ body {
 .container {
     color: #ff5c5c;
     position: relative;
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 80%;
+>>>>>>> eef8e615a30ffdf2c1cbb57a112645b3b53aaa36
 }
 
 .navbar-custom {

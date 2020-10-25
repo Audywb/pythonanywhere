@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.forms import ModelForm
 
 from django.contrib.auth.forms import UserCreationForm
@@ -51,3 +52,24 @@ class MyCommentForm2(ModelForm):
     class Meta:
         model = Comment2
         fields = ['User_Name', 'Phone', 'E_mail','A_ddess', 'P_code', 'N_slip']
+=======
+from django.forms import ModelForm
+
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+
+from django.contrib.auth.models import User
+
+
+class CreateUserForm(UserCreationForm):
+
+    class Meta:
+        model = User
+        fields = [
+
+                'username',
+                'email',
+                'password1',
+                'password2'
+        ]
+>>>>>>> eef8e615a30ffdf2c1cbb57a112645b3b53aaa36

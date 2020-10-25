@@ -22,6 +22,7 @@ class Sell(models.Model):
     address = models.TextField()
     postcode = models.CharField(max_length=10)
     number_slip = models.IntegerField()
+<<<<<<< HEAD
     
 
     def __str__(self):
@@ -49,3 +50,9 @@ class Comment2(models.Model):
  
     def __str__(self):   # __unicode__ on Python 2
         return self.User_Name
+=======
+    sell_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name} - {self.p_number} - {self.address}- {self.p_number} - {self.postcode}- {self.sell_date} - {self. number_slip}'
+>>>>>>> eef8e615a30ffdf2c1cbb57a112645b3b53aaa36
