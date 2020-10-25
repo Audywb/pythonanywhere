@@ -116,42 +116,28 @@
         <hr>
     </div>
     <br><br><br><br>
-    <div class="container">
-        <div class="card border-0 shadow my-5">
-            <div class="card-body p-5">
-                <h1 class="font-weight-light">All orders</h1>
-                <br>
-                <table>
-                    <tr>
-                        <th>User_Name</th>
-                        <th>Phone</th>
-                        <th>E_mail</th>
-                        <th>A_ddess</th>
-                        <th>P_code</th>
-                        <th>N_slip</th>
-                        {% for i in show %}
-                    </tr>
+    <div class="col-md-6 mb-4" style="margin-left: 25%;">
 
-                    <tr>
-                        <td>{{ i.User_Name }}</td>
-                        <td>{{ i.Phone}}</td>
-                        <td>{{ i.E_mail }}</td>
-                        <td>{{ i.A_ddess }}</td>
-                        <td>{{ i.P_code }}</td>
-                        <td>{{ i.N_slip }}</td>
-                        {% endfor %}
-                    </tr>
-
-                </table>
+        <div class="card mdb-color">
+            <div class="card-body">
+                <h2 class="font-weight-bold cyan-lighter-hover mb-3">การทำรายการเสร็จสิ้น</h2>
+                <p class="white-darker-hover">คุณจะได้รับสิ้นค้าภายใน 3-7 วันทำการ <br>ในกรณีที่ลูกค้าสั่งซื้อสินค้ากับทางร้าน แต่สินค้าบางรายการหมด หรือขาดตลาดชั่วคราว จะมีเจ้าหน้าที่ของเราโทรไปแจ้ง สามารถเปลี่ยนรายการสินค้าในราคาเดียวกัน รอสินค้า หรือยกเลิกรายการสินค้านั้นๆ ได้
+                    <br>หากลูกค้าต้องการยกเลิอกสินค้า กรุณาติดต่อมาที่ 02-222555 หรือ Lind ID: audyworanat
+                </p>
             </div>
         </div>
-        <br><br><br><br><br>
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">audyyy.pythonanywhere.com Website 2020 (Website: เพื่อการศึกษาเท่านั้น)</p>
-            </div>
-            <!-- /.container -->
-        </footer>
+
+    </div>
+    </div>
+    <br><br>
+    <a href="/index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">กลับสู่หน้าแรก</a>
+    <br><br><br><br><br>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">audyyy.pythonanywhere.com Website 2020 (Website: เพื่อการศึกษาเท่านั้น)</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
 </body>
 <!-- Bootstrap core JavaScript -->

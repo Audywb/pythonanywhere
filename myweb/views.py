@@ -32,9 +32,8 @@ def shopping3(req):
 def sell01(req):
     return render(req, 'myweb/sell01.html')
 
-def showdata(req):
-    return render(req, 'myweb/showdata.html')
-
+def completed(req):
+    return render(req, 'myweb/completed.html')
 
 
 
@@ -90,7 +89,7 @@ def add_model2(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
-            return redirect('index')
+            return redirect('completed')
  
     else:
  

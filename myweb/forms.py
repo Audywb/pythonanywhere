@@ -30,5 +30,5 @@ class CreateUserForm(UserCreationForm):
 class MyCommentForm2(ModelForm):
     class Meta:
         model = Comment2
-        fields = ['User_Name', 'Phone', 'E_mail','A_ddess', 'P_code', 'N_slip']
+        fields = ['id', 'User_Name', 'Phone', 'E_mail','A_ddess', 'P_code', 'N_slip']
 
